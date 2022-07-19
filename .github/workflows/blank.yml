@@ -33,7 +33,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       
-  deploy:
+  deploy-dev:
     runs-on: ubuntu-latest
     environment: 
       name: dev
@@ -43,3 +43,15 @@ jobs:
       - uses: actions/checkout@v3
       - name: Deploying application to dev
         run: echo Deployment done!
+
+  deploy-prod:
+    runs-on: ubuntu-latest
+    environment: 
+      name: dev
+      url: https://prod.example.com
+    needs: build
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploying application to dev
+        run: echo Deployment done!
+
