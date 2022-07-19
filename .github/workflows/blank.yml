@@ -47,7 +47,7 @@ jobs:
   deploy-prod:
     runs-on: ubuntu-latest
     environment: 
-      name: dev
+      name: prod
       url: https://prod.example.com
     needs: build
     steps:
